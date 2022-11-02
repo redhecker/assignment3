@@ -10,7 +10,6 @@ public class A3_exercise4 {
         int[][]a = new int[n1][n2];
 
         enter(a);
-//        int[][] x = swit(a);
         for(int i=0;i<a.length;i++){
             System.out.print(a[i][0]);
             for(int j=1;j<a[0].length;j++){
@@ -24,21 +23,23 @@ public class A3_exercise4 {
         boolean[][]boo = new boolean[a.length][a[0].length];
         int m=0,n=0;
         for(int i=0 ;i<Math.min(a.length,a[0].length)/2 + 1;i++){
-            for(int p = n ;p < a.length - i - 1 && m < a.length && n < a[0].length; p++ , n++){
-                a[m][n] = input.nextInt();
-                boo[m][n] = true;
+            for(int p = n ;p < a.length - i - 1 && n < a.length && m < a[0].length; p++ , n++){
+                a[n][m] = input.nextInt();
+                boo[n][m] = true;
             }
-            for(int p = m ;p < a[0].length - i -1 && m < a.length && n < a[0].length; p++ , m++){
-                a[m][n] = input.nextInt();
-                boo[m][n] = true;
+            for(int p = m ;p < a[0].length - i -1 && n < a.length && m < a[0].length; p++ , m++){
+                a[n][m] = input.nextInt();
+                boo[n][m] = true;
             }
-            for(int p = n ;p > i && m < a.length && n < a[0].length; p-- , n--){
-                a[m][n] = input.nextInt();
-                boo[m][n] = true;
+            for(int p = n ;p > i && n < a.length && m < a[0].length; p-- , n--){
+                a[n][m] = input.nextInt();
+                boo[n][m] = true;
+                if(m == 0 && n == a.length-1)break;
             }
-            for(int p = m ;p > i && m < a.length && n < a[0].length; p-- , m--){
-                a[m][n] = input.nextInt();
-                boo[m][n] = true;
+            for(int p = m ;p > i && n < a.length && m < a[0].length; p-- , m--){
+                a[n][m] = input.nextInt();
+                boo[n][m] = true;
+                if(n == a.length-1 && m == a[0].length-1)break;
             }
             m++;n++;
         }
@@ -49,14 +50,5 @@ public class A3_exercise4 {
             }
         }
 
-    }
-    public static int[][] swit(int[][]a){
-        int[][]m = new int [a.length][a[0].length];
-        for(int i=0;i<a.length;i++){
-            for(int j=i;j<a[0].length;j++){
-                a[i][j] = a[i][j];
-            }
-        }
-        return m;
     }
 }
