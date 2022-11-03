@@ -54,114 +54,34 @@ public class A3_exercise5 {
 
     public static boolean isfive1(boolean[][]a,int m,int n){
         int k = 0;
-        if(isTrue(a,m+1,n+1)){
-            k++;
-            if(isTrue(a,m+2,+n+2)){
-                k++;
-                if(isTrue(a,m+3,n+3)){
-                    k++;
-                    if(isTrue(a,m+4,n+4)){
-                        k++;
-                    }
-                }
-            }
-        }
-        if(isTrue(a,m-1,n-1)){
-            k++;
-            if(isTrue(a,m-2,n-2)){
-                k++;
-                if(isTrue(a,m-3,n-3)){
-                    k++;
-                    if(isTrue(a,m-4,n-4)){
-                        k++;
-                    }
-                }
-            }
-        }
+        int p=m,q=n;
+        while(isTrue(a,++m,++n))k++;
+        m=p;n=q;
+        while(isTrue(a,--m,--n))k++;
         return k >= 4;
     }
     public static boolean isfive2(boolean[][]a,int m,int n){
         int k = 0;
-        if(isTrue(a,m+1,n-1)){
-            k++;
-            if(isTrue(a,m+2,n-2)){
-                k++;
-                if(isTrue(a,m+3,n-3)){
-                    k++;
-                    if(isTrue(a,m+4,n-4)){
-                        k++;
-                    }
-                }
-            }
-        }
-        if(isTrue(a,m-1,n+1)){
-            k++;
-            if(isTrue(a,m-2,n+2)){
-                k++;
-                if(isTrue(a,m-3,n+3)){
-                    k++;
-                    if(isTrue(a,m-4,n+4)){
-                        k++;
-                    }
-                }
-            }
-        }
+        int p=m,q=n;
+        while(isTrue(a,++m,--n))k++;
+        m=p;n=q;
+        while(isTrue(a,--m,++n))k++;
         return k >= 4;
     }
     public static boolean isfive3(boolean[][]a,int m,int n){
         int k = 0;
-        if(isTrue(a,m+1,n)){
-            k++;
-            if(isTrue(a,m+2,n)){
-                k++;
-                if(isTrue(a,m+3,n)){
-                    k++;
-                    if(isTrue(a,m+4,n)){
-                        k++;
-                    }
-                }
-            }
-        }
-        if(isTrue(a,m-1,n)){
-            k++;
-            if(isTrue(a,m-2,n)){
-                k++;
-                if(isTrue(a,m-3,n)){
-                    k++;
-                    if(isTrue(a,m-4,n)){
-                        k++;
-                    }
-                }
-            }
-        }
+        int p=m,q=n;
+        while(isTrue(a,++m,n))k++;
+        m=p;n=q;
+        while(isTrue(a,--m,n))k++;
         return k >= 4;
     }
     public static boolean isfive4(boolean[][]a,int m,int n){
         int k = 0;
-        if(isTrue(a,m,n-1)){
-            k++;
-            if(isTrue(a,m,n-2)){
-                k++;
-                if(isTrue(a,m,n-3)){
-                    k++;
-                    if(isTrue(a,m,n-4)){
-                        k++;
-                    }
-                }
-            }
-        }
-        if(isTrue(a,m,n+1)){
-            k++;
-            if(isTrue(a,m,n+2)){
-                k++;
-                if(isTrue(a,m,n+3)){
-                    k++;
-                    if(isTrue(a,m,n+4)){
-                        k++;
-                    }
-                }
-            }
-        }
+        int p=m,q=n;
+        while(isTrue(a,m,--n))k++;
+        m=p;n=q;
+        while(isTrue(a,m,++n))k++;
         return k >= 4;
     }
 }
